@@ -1,18 +1,15 @@
-import Vue from "vue";
-import OneSignal from "onesignal-vue";
+import { createApp } from 'vue'
+import OneSignal from '@onesignal/onesignal-vue3'
+import App from './App.vue'
+import { _OneSignalAppId_ } from './common/constants'
 
-import App from "./App.vue";
+const app = createApp(App, {
+  productionTip: false
+})
 
-Vue.config.productionTip = false;
+app.use(OneSignal, {
+  appId: _OneSignalAppId_,
+  allowLocalhostAsSecureOrigin: true
+})
 
-Vue.use(OneSignal);
-
-new Vue({
-  render: h => h(App),
-  beforeMount() {
-    this.$OneSignal.init({
-      appId: "<You OneSignal application identifier",
-      allowLocalhostAsSecureOrigin: true,
-    });
-  },
-}).$mount("#app");
+app.mount('#app')

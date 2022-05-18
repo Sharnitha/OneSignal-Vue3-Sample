@@ -7,18 +7,18 @@
 
 <script>
 // eslint-disable-next-line no-unused-vars
-import OneSignal from "onesignal-vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import OneSignal from 'onesignal-vue'
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    HelloWorld,
+    HelloWorld
   },
   beforeCreate() {
-    this.$OneSignal.showSlidedownPrompt();
-  },
-};
+    this.$OneSignal.showSlidedownPrompt()
+  }
+}
 </script>
 
 <style>
