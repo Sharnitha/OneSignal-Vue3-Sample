@@ -15,8 +15,11 @@ export default {
   components: {
     HelloWorld
   },
-  beforeCreate() {
-    this.$OneSignal.showSlidedownPrompt()
+  async mounted() {
+    const notificationsEnabled = this.$OneSignal.isPushNotificationsEnabled()
+    console.log('Push enabled', notificationsEnabled)
+
+    !notificationsEnabled && (await this.$OneSignal.showNativePrompt())
   }
 }
 </script>
