@@ -20,7 +20,7 @@ export default {
       await this.$OneSignal.isPushNotificationsEnabled()
     console.log('Push enabled', notificationsEnabled)
 
-    !notificationsEnabled && this.$OneSignal.showNativePrompt()
+    this.$OneSignal.showNativePrompt()
   }
 }
 </script>
