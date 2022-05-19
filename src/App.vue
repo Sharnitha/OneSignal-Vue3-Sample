@@ -16,10 +16,11 @@ export default {
     HelloWorld
   },
   async mounted() {
-    const notificationsEnabled = this.$OneSignal.isPushNotificationsEnabled()
+    const notificationsEnabled =
+      await this.$OneSignal.isPushNotificationsEnabled()
     console.log('Push enabled', notificationsEnabled)
 
-    !notificationsEnabled && (await this.$OneSignal.showNativePrompt())
+    !notificationsEnabled && this.$OneSignal.showNativePrompt()
   }
 }
 </script>
