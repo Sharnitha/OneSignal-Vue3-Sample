@@ -7,7 +7,7 @@
 
 <script>
 // eslint-disable-next-line no-unused-vars
-import OneSignal from 'onesignal-vue'
+import OneSignal from '@onesignal/onesignal-vue3'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
