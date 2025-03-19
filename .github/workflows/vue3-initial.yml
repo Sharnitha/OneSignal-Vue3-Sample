@@ -14,5 +14,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: "npm build"
-        run: npm run build
+      - name: "npm install"
+        run: npm run serve
